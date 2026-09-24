@@ -19,11 +19,18 @@ This SDK does not contain private firmware sources, factory tools, license keys 
 - PSRAM: 8 MB
 - Target ESP-IDF: 5.5.4
 
+## API boundary
+
+- `ls_api.h` is the common module API for LoongSocket identity, health and
+  module services.
+- Product APIs built on top of this module must keep their own prefix. For
+  example, AI-PLC Core uses `aiplc_core_api.h` for PLC runtime features.
+
 ## Current status
 
-Prototype SDK structure.
-
-The headers and documentation are included. Precompiled `.a` libraries will be added when the private firmware API boundary is frozen.
+Prototype SDK structure with public headers and Markdown API documentation.
+Precompiled `.a` libraries will be added when the private firmware API boundary
+is frozen.
 
 ## Folders
 

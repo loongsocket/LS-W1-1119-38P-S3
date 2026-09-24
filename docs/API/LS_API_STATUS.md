@@ -6,6 +6,8 @@ Status date: 2026-08-29
 
 | Area | Status |
 | --- | --- |
+| Common module API (`ls_api`) | Implemented |
+| Module info/status aggregation | Implemented |
 | BMS identity/status | Implemented |
 | USB Serial/JTAG status | Implemented |
 | USB recovery hook | Implemented, basic |
@@ -43,3 +45,4 @@ Status date: 2026-08-29
 - Monitor demo flashed and checked on COM8.
 - S3 module detected as ESP32-S3 with 16 MB flash and 8 MB PSRAM.
 - MCP3208 routing previously tested on CH0..CH7.
+

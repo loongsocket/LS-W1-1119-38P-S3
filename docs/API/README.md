@@ -1,11 +1,9 @@
 # LoongSocket LS-W1 S3 N16R8 API
 
-This folder documents the firmware API used by the
-`FW-LS-W1-S3-N16R8` project.
+This folder documents the public SDK API used by the `FW-LS-W1-S3-N16R8` module.
 
 ## Module
 
-- Project: `FW-LS-W1-S3-N16R8`
 - Module P/N: `LS-W1-1119-38P-S3U-N16R8`
 - MCU: ESP32-S3
 - Flash: 16 MB
@@ -17,6 +15,7 @@ This folder documents the firmware API used by the
 
 | Component | Header | Purpose |
 | --- | --- | --- |
+| Common API | `ls_api.h` | Stable module entry point: version, identity, memory, temperature, reset state and safe service initialization |
 | BMS | `ls_bms.h` | Board identity, reset reason, memory and safe-mode status |
 | USB | `ls_usb.h` | Native USB Serial/JTAG status and recovery |
 | Storage | `ls_storage.h` | NVS-backed storage with write-on-change |
@@ -24,22 +23,19 @@ This folder documents the firmware API used by the
 | I/O | `ls_io.h` | GPIO, PWM and board reserved-pin protection |
 | Board Test | `ls_board_test.h` | Production/demo helpers for PWM, square-wave and ADC PASS/NO PASS |
 
-## Startup order
-
-Recommended initialization order:
+## Recommended Entry Point
 
 ```cpp
-ls_bms_init();
-ls_usb_init();
-ls_mcp3208_init();
-ls_io_init();
-ls_storage_init();
+#include "ls/ls_api.h"
+
+ls_api_init();
 ```
 
-The current Kickstarter monitor demo follows this order in `main/main.cpp`.
+Use lower-level headers only when the application needs direct peripheral access.
 
 ## Documentation Files
 
+- `LS_COMMON_API.md`
 - `LS_BMS_API.md`
 - `LS_USB_API.md`
 - `LS_STORAGE_API.md`
