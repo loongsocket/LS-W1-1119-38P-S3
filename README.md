@@ -1,11 +1,13 @@
-# LoongSocket LS-W1 S3 N16R8 SDK
+# LoongSocket LS-W1-1119-38P-S3
 
-Public SDK package for the LoongSocket LS-W1 S3 N16R8 module.
+Public SDK and hardware documentation package for the LoongSocket
+`LS-W1-1119-38P-S3` platform.
 
 This repository contains the customer-facing API surface:
 
 - Public headers in `include/ls/`.
 - API documentation in `docs/API/`.
+- Hardware documentation and schematics in `docs/hardware/`.
 - Example code in `examples/`.
 - Reserved `lib/` folder for precompiled libraries.
 
@@ -13,7 +15,8 @@ This SDK does not contain private firmware sources, factory tools, license keys 
 
 ## Module
 
-- Module part number: `LS-W1-1119-38P-S3U-N16R8`
+- Product code: `LS-W1-1119-38P-S3`
+- Module variant: `ESP32-S3-WROOM-1U-N16R8`
 - MCU family: ESP32-S3
 - Flash: 16 MB
 - PSRAM: 8 MB
